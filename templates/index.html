@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Portfolio</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+    <!-- Favicon
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static',filename='/img/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static',filename='/img/apple-touch-icon.png')}}">
+
+    <!-- Stylesheets
+    ================================================== -->
+    <!-- Bootstrap core CSS -->
+    <link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{url_for('static',filename='css/style.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='css/responsive.css')}}" rel="stylesheet">
+    <link href=" https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+    <header id="masthead" class="site-header" data-anchor-target=".hero" data-top="background: rgba(255,255,255,0); padding: 30px 0; box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0);" data-top-bottom="background: rgba(255,255,255,1); padding: 10px 0; box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.2);">
+        <nav id="primary-navigation" class="site-navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+
+                    <button type="button" class="navbar-toggle collapsed" data-target="#portfolio-perfect-collapse" aria-expanded="false" >
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <a href="#hero" class="site-logo"><img src="{{url_for('static',filename='/img/favicon.jpg')}}" alt="logo"></a>
+
+                </div><!-- /.navbar-header -->
+
+                <div class="main-menu" id="portfolio-perfect-collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li class="page-scroll"><a href="#hero">Home</a></li>
+                        <li class="page-scroll"><a href="#about">About</a></li>
+                        <li class="page-scroll"><a href="#service">Service</a></li>
+                        <li class="page-scroll"><a href="#portfolio">Portfolio</a></li>
+                        <li class="page-scroll"><a href="#contact">Contact</a></li>
+                        
+                    </ul><!-- /.navbar-nav -->
+
+                </div><!-- /.navbar-collapse -->
+
+            </div>
+        </nav><!-- /.primary-navigation -->
+    </header><!-- /#header -->
+
+    <div id="hero" class="hero">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <h1>Syed Yousuf</h1>
+                    <div class="page-scroll">
+                        <p class="job-title">Aspiring DataScientist</p>
+                        <a href="#contact" class="btn btn-fill ">Contact me</a>
+                        <div class="clearfix visible-xxs"></div>
+                        <a href="#portfolio" class="btn btn-border">Explore more</a>
+                        {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                <p class="alert alert-success" role="alert">{{ message }}</p>
+                {% endfor %}
+                {% endif %}
+            {% endwith %}
+                    </div>
+                </div>
+                <div class="col-md-6 text-right">
+
+                </div>
+
+            </div>
+        </div>
+    </div><!-- /.hero -->
+
+    <main id="main" class="site-main">
+
+        <section id="about" class="site-section section-about text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <h2>About</h2>
+                        <img src="{{url_for('static',filename='img/lines.svg')}}" class="img-lines" alt="lines">
+                        <p>Hello! I'm Yousuf, a fresh software graduate, a python enthusiast.I’m currently doing freelance work. If you have a project that you want to get started or think you need my help with something, then get in touch.</p>
+                        <a href="{{url_for('static',filename='cv/SyedYousufCV.pdf')}}" class="btn btn-fill" target="_blank" download>Download my cv</a>
+                        <a href=”http://example.com/open-pdf-in-new-tab-html.pdf” target=”_blank”>Open/Read PDF</a>
+                    </div>
+                </div>
+            </div>
+        </section><!-- /.secton-about -->
+
+        <section class="site-section section-skills">
+            <div class="container">
+                <div class="text-center">
+                    <h3>My Skills</h3>
+                    <img src="{{url_for('static',filename='img/lines.svg')}}" class="img-lines" alt="lines">
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="skill">
+                            <h4>Python</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-transitiongoal="85"></div><!-- /.progress-bar -->
+                            </div><!-- /.progress -->
+                        </div><!-- /.skill -->
+                        <div class="skill">
+                            <h4>Data Visualization</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-transitiongoal="75"></div><!-- /.progress-bar -->
+                            </div><!-- /.progress -->
+                        </div><!-- /.skill -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="skill">
+                            <h4>Machine/Deep Learning</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-transitiongoal="80"></div><!-- /.progress-bar -->
+                            </div><!-- /.progress -->
+                        </div><!-- /.skill -->
+                        <div class="skill">
+                            <h4>Data Analyzing</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-transitiongoal="75"></div><!-- /.progress-bar -->
+                            </div><!-- /.progress -->
+                        </div><!-- /.skill -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="skill">
+                            <h4>Data Extraction</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-transitiongoal="80"></div><!-- /.progress-bar -->
+                            </div><!-- /.progress -->
+                        </div><!-- /.skill -->
+                        <div class="skill">
+                            <h4>Computer Vision</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" data-transitiongoal="70"></div><!-- /.progress-bar -->
+                            </div><!-- /.progress -->
+                        </div><!-- /.skill -->
+                    </div>
+                </div>
+            </div>
+        </section><!-- /.secton-skills -->
+
+        <section id="service" class="site-section section-services overlay text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>What i do</h3>
+                        <img src="{{url_for('static',filename='img/lines.svg')}}" class="img-lines" alt="lines">
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="service">
+                            <img src="{{url_for('static',filename='img/front-end.svg')}}" alt="Front End Developer">
+                            <h4>Data Analysis And Visualization.</h4>
+                            <p>As a python developer, I have experience in pandas and many data visualization libraries such as seaborn,matplotlib.</p>
+                        </div><!-- /.service -->
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="service">
+                            <img src="{{url_for('static',filename='img/back-end.svg')}}" alt="Back End Developer">
+                            <h4>Extracting Data and Dashboarding.</h4>
+                            <p>For Dashboarding and interactive graph, I use dash-plotly and streamlit and for Data extraction, I use scrapy and Bs4.</p>
+                        </div><!-- /.service -->
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="service">
+                            <img src="{{url_for('static',filename='img/consultancy.svg')}}" alt="Coding">
+                            <h4>Predictive Analysis.</h4>
+                            <p>As well as providing data analysis, visualization and extraction services, I can also help you with machine and deep learning for machine learning, I use Scikit-Learn and for deep learning, I use Tensorflow-Keras.For deploying and using models,I use flask</p>
+                        </div><!-- /.service -->
+                    </div>
+                </div>
+            </div>
+        </section><!-- /.secton-services -->
+
+        <section id="portfolio" class="site-section section-portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h3>My Work</h3>
+                    <img src="{{url_for('static',filename='img/lines.svg')}}" class="img-lines" alt="lines">
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="{{url_for('static',filename='img/portfolio-1.jpg')}}" class="img-res" alt="">
+                            <div class="portfolio-item-info">
+                                <h4>Dashboards And Analysis.</h4>
+                                <a href="#" data-toggle="modal" data-target="#portfolioItem1"><span class="glyphicon glyphicon-eye-open"></span></a>
+                            </div><!-- /.portfolio-item-info -->
+                        </div><!-- /.portfolio-item -->
+                    </div>
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="{{url_for('static',filename='img/portfolio-3.jpg')}}" class="img-res" alt="">
+                            <div class="portfolio-item-info">
+                                <h4>Machine And Deep Learning.</h4>
+                                <a href="#" data-toggle="modal" data-target="#portfolioItem2"><span class="glyphicon glyphicon-eye-open"></span></a>
+                            </div><!-- /.portfolio-item-info -->
+                        </div><!-- /.portfolio-item -->
+                    </div>
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="{{url_for('static',filename='img/portfolio-4.jpg')}}" class="img-res" alt="">
+                            <div class="portfolio-item-info">
+                                <h4>Scrappers.</h4>
+                                <a href="#" data-toggle="modal" data-target="#portfolioItem3"><span class="glyphicon glyphicon-eye-open"></span></a>
+                            </div><!-- /.portfolio-item-info -->
+                        </div><!-- /.portfolio-item -->
+                    </div>
+                    <div class="col-md-4 col-xs-6">
+                        <div class="portfolio-item">
+                            <img src="{{url_for('static',filename='img/portfolio-5.jpg')}}" class="img-res" alt="">
+                            <div class="portfolio-item-info">
+                                <h4>Computer Vision.</h4>
+                                <a href="#" data-toggle="modal" data-target="#portfolioItem4"><span class="glyphicon glyphicon-eye-open"></span></a>
+                            </div><!-- /.portfolio-item-info -->
+                        </div><!-- /.portfolio-item -->
+                    </div>
+                </div>
+            </div>
+        </section><!-- /.secton-portfolio -->
+
+
+        <section id="contact" class="site-section section-form text-center">
+            <div class="container">
+                <h3>Contact</h3>
+                <img src="{{url_for('static',filename='/img/lines.svg')}}" class="img-lines" alt="lines">
+                <form method="POST" novalidate>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {{form.csrf_token}}
+                            {{form.email(class='form-control',placeholder='Enter Email')}}
+
+                            {%for error in form.email.errors%}
+                               <div class="alert alert-danger" role="alert">
+                                    {{error}}
+                                </div>
+                            {%endfor%}
+
+                        </div>
+                        <div class="col-sm-12">
+                            {{form.body (class='form-control',placeholder='Enter Message')}}
+                            {%for error in form.body.errors%}
+                            <div class="alert alert-danger" role="alert">
+                                    {{error}}
+                            </div>
+                            {%endfor%}
+
+                        </div>
+                        <div class="col-sm-12">
+                            {{form.name (class='form-control',placeholder='Enter Name')}}
+                            {%for error in form.name.errors%}
+                            <div class="alert alert-danger" role="alert">
+                                    {{error}}
+                            </div>
+                            {%endfor%}
+
+                        </div>
+                    </div>
+                    <button class="btn btn-border" type="submit">Contact Me <span class="glyphicon glyphicon-send"></span></button>
+                </form>
+            </div>
+        </section><!-- /.section-form -->
+    </main><!-- /#main -->
+
+
+    <!-- Modals -->
+    <div id="portfolioItem1" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+            <img class="img-res" src="{{url_for('static',filename='img/portfolio-1.jpg')}}" alt="">
+          </div>
+          <div class="modal-body">
+            <h4 class="modal-title">France And UK Energy Consumption (Dash-Plotly,Pandas and Mysql(for getting data from mysql).</h4>
+          </div>
+          <div class="modal-footer">
+            <a href="http://syedyousuf.pythonanywhere.com" class="btn btn-fill" target="_blank">Visit Page.</a>
+          </div>
+            <div class="modal-body">
+            <h4 class="modal-title">Bitcoin Currency (Dash-Plotly,Matplotlib and Scikit-Learn).</h4>
+          </div>
+          <div class="modal-footer">
+            <a href="http://benzle.pythonanywhere.com" class="btn btn-fill" target="_blank">Visit Page.</a>
+          </div>
+
+            <div class="modal-body">
+            <h4 class="modal-title">Image Annotation (Dash-Plotly and Pandas).</h4>
+                <p>Created a image annotation application that draw bounding box and information related to the bounding box is save in csv file and the bounding box is displayed if the image is already in the csv file</p>
+          </div>
+            <div class="modal-body">
+            <h4 class="modal-title">Data Analysis.</h4>
+                <p>JupyterNotebooks</p>
+                    <div class="modal-footer">
+            <a href="https://github.com/yousuf9292/Data-analyst-and-deepl-learning" class="btn btn-fill" target="_blank">Get Code.</a>
+          </div>
+            </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="portfolioItem2" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+            <img class="img-res" src="{{url_for('static',filename='img/portfolio-3.jpg')}}" alt="">
+          </div>
+          <div class="modal-body">
+            <h4 class="modal-title">Iris Flower Classification (Streamlit,Sk-Learn).</h4>
+          </div>
+          <div class="modal-footer">
+            <a href="https://github.com/yousuf9292/iris/blob/main/main.py" class="btn btn-fill">Get Code.</a>
+          </div>
+            <div class="modal-body">
+            <h4 class="modal-title">Iris Flower Classification (Flask,Tensorflow-Keras).</h4>
+          </div>
+          <div class="modal-footer">
+            <a href="http://iriss.pythonanywhere.com" class="btn btn-fill">Visit Page</a>
+          </div>
+            <div class="modal-body">
+            <h4 class="modal-title">Doctor Assistance (Flask, Dash-Plotly and Tensorflow-Keras).</h4>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="portfolioItem3" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+            <img class="img-res" src="{{url_for('static',filename='img/portfolio-4.jpg')}}" alt="">
+          </div>
+          <div class="modal-body">
+            <h4 class="modal-title">Image Scrapper Gui.</h4>
+              <p>Created a image scraper gui using bs4 and the gui was created using pysimplegui.</p>
+          </div>
+          <div class="modal-footer">
+            <a href="https://github.com/yousuf9292/pysimpleguiscrapper/blob/main/main.py" class="btn btn-fill">Get Code.</a>
+          </div>
+            <div class="modal-body">
+            <h4 class="modal-title">Food Panda Scrapper.</h4>
+              <p>Created a scrapper which scrapped both the images and the information related to the image.</p>
+          </div>
+          <div class="modal-footer">
+            <a href="https://github.com/yousuf9292/Scrapy/blob/master/ama/ama/spiders/web.py" class="btn btn-fill">Get Code.</a>
+          </div>
+            <div class="modal-body">
+            <h4 class="modal-title">Dawn Magzine Scrapper.</h4>
+              <p>Created a scrapper which scrapped the article-image and the information related to the article-image.</p>
+          </div>
+          <div class="modal-footer">
+            <a href="https://github.com/yousuf9292/Scrapy/blob/master/another/another/spiders/main.py" class="btn btn-fill">Get Code.</a>
+          </div>
+            <div class="modal-body">
+            <h4 class="modal-title">Price Oye Scrapper.</h4>
+              <p>Scrapped 4 Product-Categories Images.</p>
+          </div>
+          <div class="modal-footer">
+            <a href="https://github.com/yousuf9292/Scrapy/blob/master/doc/doc/doc/spiders/tut.py" class="btn btn-fill">Get Code.</a>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="portfolioItem4" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+            <img class="img-res" src="{{url_for('static',filename='img/portfolio-5.jpg')}}" alt="">
+          </div>
+          <div class="modal-body">
+            <h4 class="modal-title">Face Expression Classifier.</h4>
+              <p>Created Face Expression classification model and run on cv2.</p>
+          </div>
+          <div class="modal-footer">
+            <a href="https://github.com/yousuf9292/Face-Expression-Custome-Model-and-cv2/blob/master/Emotion%20detector.ipynb" class="btn btn-fill">Get Code.</a>
+          </div>
+            <div class="modal-body">
+            <h4 class="modal-title">Digit Classifier.</h4>
+        </div><!-- /.modal-content -->
+            <div class="modal-body">
+            <h4 class="modal-title">Monkey Breed Classifier.</h4>
+        </div><!-- /.modal-content -->
+
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="{{url_for('static',filename='js/skrollr.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-progressbar/0.9.0/bootstrap-progressbar.min.js"></script>
+    <script src="{{url_for('static',filename='js/jquery.countTo.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/script.js')}}"></script>
+  
+</body>
+</html>
