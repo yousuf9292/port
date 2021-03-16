@@ -35,7 +35,7 @@ def home():
         print(form.email.data)
         msg =Message(sender="yousufsyed900@gmail.com",reply_to=form.email.data,subject=form.email.data,recipients=['yousufsyed900@gmail.com'],body=form.body.data)
         mail.send(msg)
-        reply=Message(sender="yousufsyed900@gmail.com",subject="Asalam U ALikum",body="How are you "+str(form.name.data)+", It is a message from syed yousuf here is my freelance work https://www.fiverr.com/users/syedyousuf90/manage_orders?source=header_navigation&search_type=completed",recipients=[form.email.data])
+        reply=Message(sender="yousufsyed900@gmail.com",subject="Asalam U ALikum",body="How are you "+str(form.name.data)+", It is a message from syed yousuf here is my freelance account https://www.fiverr.com/users/syedyousuf90",recipients=[form.email.data])
         mail.send(reply)
 
         flash("Check Your Email "+str(form.name.data))
